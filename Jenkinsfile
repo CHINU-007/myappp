@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/CHINU-007/myappp.git'
+                git branch: 'main', url: 'https://github.com/CHINU-007/myappp.git'
             }
         }
 
