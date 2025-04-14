@@ -14,14 +14,16 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t myappp .'
+                sh 'docker build -t myappp .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                bat 'docker rm -f myappp || exit 0'
-                bat 'docker run -d -p 3000:3000 --name myappp myappp:latest'
+                // Stop and remove any running container (ignore error if not running)
+                sh 'docker rm -f myappp || true'
+                // Run the container
+                sh 'docker run -d -p 3000:3000 --name myappp myappp:latest'
             }
         }
     }
