@@ -1,0 +1,7 @@
+version: 2
+authtoken: 2vqNCLOgCZRex8WZXi5SK5WNPym_73aJbEitjzJ3m1S9yZbSd
+
+tunnels:
+  jenkins:
+    proto: http
+    addr: host.docker.internal:8080
